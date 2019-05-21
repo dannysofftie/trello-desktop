@@ -2,7 +2,7 @@
   "name": "trello-desktop",
   "productName": "Trello",
   "desktopName": "Trello",
-  "version": "0.1.3",
+  "version": "1.0.0",
   "description": "Unofficial Trello desktop app",
   "license": "MIT",
   "repository": "danielchatfield/trello-desktop",
@@ -12,16 +12,24 @@
     "url": "http://www.danielchatfield.com"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=12"
   },
-  "electronVersion": "0.34.3",
+  "electronVersion": "5.0.1",
+  "build": {
+    "appId": "com.danielchatfield.trello-desktop",
+    "mac": {
+      "category": "com.danielchatfield.trello-desktop"
+    }
+  },
   "scripts": {
     "test": "xo --space",
     "start": "electron .",
     "build": "npm run build:macos && npm run build:linux && npm run build:windows",
     "build:macos": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --prune --platform=darwin --arch=x64 --icon=static/Icon.icns --app-bundle-id=com.danielchatfield.trello-desktop --sign='Developer ID Application: Daniel Chatfield (BB2HNG5KBM)' --app-version=$npm_package_version && cd dist/Trello-darwin-x64 && zip -ryXq9 ../Trello-osx-${npm_package_version}.zip Trello.app",
     "build:linux": "electron-packager . --overwrite --out=dist --ignore='^media$' --prune --platform=linux --arch=x64 --icon=static/Icon.png --app-bundle-id=com.danielchatfield.trello-desktop --app-version=$npm_package_version && cd dist/Trello-linux-x64/ && zip -ryq9 ../Trello-linux-${npm_package_version}.zip *",
-    "build:windows": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --prune --platform=win32 --arch=ia32 --icon=static/Icon.ico --version-string.ProductName=$npm_package_productName --app-version=$npm_package_version && cd dist/Trello-win32-ia32 && zip -ryq9 ../Trello-windows-${npm_package_version}.zip *"
+    "build:windows": "electron-packager . --overwrite --asar --out=dist --ignore='^media$' --prune --platform=win32 --arch=ia32 --icon=static/Icon.ico --version-string.ProductName=$npm_package_productName --app-version=$npm_package_version && cd dist/Trello-win32-ia32 && zip -ryq9 ../Trello-windows-${npm_package_version}.zip *",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "files": [
     "index.js",
@@ -42,8 +50,9 @@
     "electron-dl": "^1.0.0"
   },
   "devDependencies": {
-    "electron-packager": "^8.7.1",
-    "electron": "^1.7.3",
+    "electron": "^5.0.1",
+    "electron-builder": "^20.40.2",
+    "electron-packager": "^13.1.1",
     "xo": "*"
   },
   "xo": {
