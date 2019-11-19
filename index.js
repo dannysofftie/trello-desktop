@@ -22,7 +22,6 @@ function createMainWindow() {
 		y: lastWindowState.y,
 		width: lastWindowState.width,
 		height: lastWindowState.height,
-		icon: process.platform === 'linux' && path.join(__dirname, 'static', 'Icon.png'),
 		minWidth: 400,
 		minHeight: 200,
 		titleBarStyle: 'hidden-inset',
