@@ -5,11 +5,11 @@
   "version": "1.0.0",
   "description": "Unofficial Trello desktop app",
   "license": "MIT",
-  "repository": "danielchatfield/trello-desktop",
+  "repository": "dannysofftie/trello-desktop",
   "author": {
-    "name": "Daniel Chatfield",
-    "email": "chatfielddaniel@gmail.com",
-    "url": "http://www.danielchatfield.com"
+    "name": "Danny Sofftie",
+    "email": "dankim761@gmail.com",
+    "url": "http://www.dannysofftie.dev"
   },
   "engines": {
     "node": ">=12"
@@ -33,15 +33,15 @@
     "trello"
   ],
   "dependencies": {
-    "auto-launch": "^5.0.1",
+    "auto-launch": "^5.0.5",
     "electron-config": "^2.0.0",
-    "electron-context-menu": "^0.15.1",
+    "electron-context-menu": "^0.16.0",
     "electron-debug": "^3.0.1",
-    "electron-dl": "^1.14.0"
+    "electron-dl": "^3.0.0"
   },
   "devDependencies": {
-    "electron": "^7.1.1",
-    "electron-builder": "^21.2.0",
+    "electron": "^8.0.1",
+    "electron-builder": "^22.3.2",
     "xo": "0.25.3"
   },
   "xo": {
@@ -55,7 +55,7 @@
     }
   },
   "build": {
-    "appId": "com.danielchatfield.trello-desktop",
+    "appId": "com.dannysofftie.trello-desktop",
     "files": [
       "**/*",
       "!media${/*}",
